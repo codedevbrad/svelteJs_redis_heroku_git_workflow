@@ -1,4 +1,9 @@
 # to do
+- error: heroku not installing dev dependancies?.
+    - do add this a build script for heroku?
+    - only add morgan if production is dev.
+    - how does heroku work with dev dependancies.
+
 - add env files to heroku
 - make sure app runs with env files
 - move other project here
