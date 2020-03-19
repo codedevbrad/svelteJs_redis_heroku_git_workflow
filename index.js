@@ -8,11 +8,7 @@ const server = require('http').createServer( app );
 // initialise middleware
 var config = require('./config/settings.js');
     config.middleware( app , __dirname );
-
-// // connect to mblabs
-// mongoose.connect( process.env.DATABASE_ATLAS , { useNewUrlParser: true } )
-//         .then ( ()  => console.log('mongodb Connected'))
-//         .catch( err => console.log( err ));
+ 
 const testENV = process.env.TESTING || 'default test text';
 
 app.get('/', (req, res , next ) => {
