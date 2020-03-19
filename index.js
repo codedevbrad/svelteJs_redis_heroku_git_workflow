@@ -13,9 +13,10 @@ var config = require('./config/settings.js');
 // mongoose.connect( process.env.DATABASE_ATLAS , { useNewUrlParser: true } )
 //         .then ( ()  => console.log('mongodb Connected'))
 //         .catch( err => console.log( err ));
+const testENV = process.env.TESTING || 'default test text';
 
 app.get('/', (req, res , next ) => {
-    res.status( 200 ).send( `hello , ${ process.env.TESTING } ` );
+    res.status( 200 ).send( `hello , ${ testENV } ` );
 });
 
 app.use( '/api' , require('./dev/api') );

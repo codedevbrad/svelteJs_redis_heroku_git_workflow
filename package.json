@@ -8,10 +8,12 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev":   "nodemon index.js",
+    "dev": "nodemon bin/dev index.js",
+    "test": "/dev/service_tests/test.js",
     "build": "node bin/dev index.js"
   },
   "dependencies": {
+    "build": "^0.1.4",
     "cors": "^2.8.5",
     "express": "^4.15.2",
     "mongoose": "^5.9.5",
