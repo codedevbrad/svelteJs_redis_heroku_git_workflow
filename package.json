@@ -13,7 +13,6 @@
     "build": "node bin/dev index.js"
   },
   "dependencies": {
-    "build": "^0.1.4",
     "cors": "^2.8.5",
     "express": "^4.15.2",
     "mongoose": "^5.9.5",
