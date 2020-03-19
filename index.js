@@ -5,10 +5,6 @@ const app    = express();
 const PORT   = process.env.PORT || 5000;
 const server = require('http').createServer( app );
 
-// initialise middleware
-var config = require('./config/settings.js');
-    config.middleware( app , __dirname );
- 
 const testENV = process.env.TESTING || 'default test text';
 
 app.get('/', (req, res , next ) => {
