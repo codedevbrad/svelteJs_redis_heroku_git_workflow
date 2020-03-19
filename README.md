@@ -27,3 +27,10 @@ git push
 $ heroku create
 $ git push heroku master
 $ heroku open
+```
+
+```
+"dev": "nodemon bin/dev index.js",
+"test": "/dev/service_tests/test.js",
+"build": "node bin/dev index.js"
+```
