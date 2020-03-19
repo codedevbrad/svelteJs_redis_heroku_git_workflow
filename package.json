@@ -8,12 +8,18 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev":   "nodemon index.js"
+    "dev":   "nodemon index.js",
+    "build": "node bin/dev index.js"
   },
   "dependencies": {
-    "express": "^4.15.2"
+    "cors": "^2.8.5",
+    "express": "^4.15.2",
+    "mongoose": "^5.9.5",
+    "path": "^0.12.7"
   },
   "devDependencies": {
+    "dotenv": "^8.2.0",
+    "morgan": "^1.9.1",
     "request": "^2.81.0",
     "tape": "^4.7.0"
   },
