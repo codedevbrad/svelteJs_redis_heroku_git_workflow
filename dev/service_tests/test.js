@@ -1,28 +1,33 @@
-const { spawn } = require('child_process');
-const request = require('request');
-const test = require('tape');
+var assert = require('assert');
+var request = require('request');
 
-// Start the app
-const env = Object.assign({}, process.env, {PORT: 5000});
-const child = spawn('node', ['index.js'], {env});
+var expect = require('chai').expect;
+var should = require('chai').should();
 
-test('responds to requests', (t) => {
-  t.plan(4);
+var loginController = ( input ) => {
+    return input < 5;
+}
 
-  // Wait until the server is ready
-  child.stdout.on('data', _ => {
-    // Make a request to our app
-    request('http://127.0.0.1:5000', (error, response, body) => {
-      // stop the server
-      child.kill();
+describe('Basic Mocha String Test', function () {
+      it('should return number of charachters in a string', ( ) => {
+           assert.equal("Hello".length, 5);
+       });
+       it('should return first charachter of the string', ( ) => {
+           assert.equal("Hello".charAt(0), 'H');
+       });
+       it('should return true if number less than',  ( ) => {
 
-      // No error
-      t.false(error);
-      // Successful response
-      t.equal(response.statusCode, 200);
-      // Assert content checks
-      t.notEqual(body.indexOf("<title>Node.js Getting Started on Heroku</title>"), -1);
-      t.notEqual(body.indexOf("Getting Started on Heroku with Node.js"), -1);
-    });
-  });
+          var isValid = loginController( 3 );
+          //assert.equal(isValid, true);
+          isValid.should.equal(true);
+       });
+});
+
+describe('server request checks' , ( ) => {
+      it('Main page content', function(done) {
+           request('http://localhost:5000/' , function(error, response, body) {
+               expect(response.statusCode).to.equal(200);
+               done();
+           });
+      });
 });

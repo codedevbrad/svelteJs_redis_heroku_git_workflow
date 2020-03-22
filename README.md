@@ -1,12 +1,31 @@
-# to do
-- error: heroku not installing dev dependancies?.
-    - do add this a build script for heroku?
-    - only add morgan if production is dev.
-    - how does heroku work with dev dependancies.
 
-- add env files to heroku
-- make sure app runs with env files
-- move other project here
+#learned
+
+- heroku doesnt use dev dependancies. we can switch our environent to add dev modules.
+- added env files in heroku. works with app now.
+- connecting with redis in the heroku server and getting / setting data.
+
+# to do
+
+- try to point domain to the heroku app.
+
+- add a basic svelteJs frontEnd
+   - components
+   - getting data from server
+   - preparing for the production server.
+
+- make sure the heroku push master doesnt look at other scripts. it should only run
+  npm run start.
+
+- before deploying app to heroku, the NODE_ENV needs to be set to production .
+   - if heroku finds that NODE_ENV is set to anything else, it does not prune dev_dependancies .
+   - By default NODE_ENV is set to production. If NODE_ENV is any other value, the pruning step will be skipped.
+     not sure what this is but i dont want dev-dependancies in a production build anyway.
+
+- set a custom error middleware for production or for development.
+    - i could have a custom file that contains all dev middleware and app.use();
+
+# app
 
 ( svelteJs , heroku , redis , git actions , CI / CD ).
 

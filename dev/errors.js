@@ -13,6 +13,6 @@ module.exports.errors = function( app ) {
      res.status( err.status || 500 );
      res.send( { msg : err.message || err ,
                  portMsg : 'the app doesnt seem to be working as intended. please refresh your broweser.'
-             });
+     });
   });
 }
