@@ -23,7 +23,7 @@ describe('Basic Mocha String Test' , ( ) => {
 
 describe('server request checks' , ( ) => {
       it('Main page content', ( done ) => {
-           request('http://localhost:5000/' , ( error , response , body ) => {
+           request('http://localhost:5050/api/getData' , ( error , response , body ) => {
                expect(response.statusCode).to.equal(200);
                done();
            });

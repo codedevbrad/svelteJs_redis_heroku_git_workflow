@@ -1,6 +1,6 @@
 const mongoose  = require('mongoose');
-const config    = require('../../config/settings.js');
-const client    = require('../../index.js').redisClient;
+const config    = require('../../../config/settings.js');
+const client    = require('../../../index.js').redisClient;
 
 const TestModel = require('./item').items;
 

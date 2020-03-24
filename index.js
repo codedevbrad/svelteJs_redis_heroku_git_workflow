@@ -11,7 +11,7 @@ var services = require('./config/services.js');
    let redis = services.redisStore();
    module.exports.redisClient = redis;
 
-var config   = require('./config/settings.js');
+var config = require('./config/settings.js');
     config.development( app , __dirname );
     config.middleware(  app , __dirname );
 
@@ -28,10 +28,8 @@ app.get('/', ( req, res , next ) => {
 });
 
 // api routes
-app.use('/api' , require('./dev/api') );
+app.use('/api' , require('./dev_api/api') );
 // error middleware
-require('./dev/errors').errors( app );
-
+require('./dev_api/errors').errors( app );
 
 server.listen( PORT, () => console.log(`Listening on ${ PORT }`))
- 

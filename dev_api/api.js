@@ -5,7 +5,7 @@ const api    = express.Router();
 const client = require('../index.js').redisClient;
 
 // routes
-const Route1 = require('./services/routeHandle');
+const Route1 = require('./services/service_content/routeHandle');
 
 const middleware = ( req , res , next ) => {
     client.get( "data" , ( err , data ) => {
