@@ -1,4 +1,4 @@
-var assert = require('assert');
+var assert  = require('assert');
 var request = require('request');
 
 var expect = require('chai').expect;
@@ -8,7 +8,7 @@ var loginController = ( input ) => {
     return input < 5;
 }
 
-describe('Basic Mocha String Test', function () {
+describe('Basic Mocha String Test' , ( ) => {
       it('should return number of charachters in a string', ( ) => {
            assert.equal("Hello".length, 5);
        });
@@ -16,16 +16,14 @@ describe('Basic Mocha String Test', function () {
            assert.equal("Hello".charAt(0), 'H');
        });
        it('should return true if number less than',  ( ) => {
-
-          var isValid = loginController( 3 );
-          //assert.equal(isValid, true);
-          isValid.should.equal(true);
+           var isValid = loginController( 3 );
+           isValid.should.equal(true);
        });
 });
 
 describe('server request checks' , ( ) => {
-      it('Main page content', function(done) {
-           request('http://localhost:5000/' , function(error, response, body) {
+      it('Main page content', ( done ) => {
+           request('http://localhost:5000/' , ( error , response , body ) => {
                expect(response.statusCode).to.equal(200);
                done();
            });

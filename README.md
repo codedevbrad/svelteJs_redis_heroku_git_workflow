@@ -4,10 +4,28 @@
 - heroku doesnt use dev dependancies. we can switch our environent to add dev modules.
 - added env files in heroku. works with app now.
 - connecting with redis in the heroku server and getting / setting data.
+- svelteJs setup
+- added mocha and jest unit testing.
 
 # to do
 
+- redis
+   - accessing redis from other files. so exporting the redis variable?.
+   - when setting data, how much data does this use on the server?.
+      - the free server holds 5MB of data.
+
+- svelteJs   
+    - load some data from db.
+       - set to redis.
+    - show data from db or redis and tell user what storage was used.
+    - learn the fetch requests
+    - learn components.
+
 - try to point domain to the heroku app.
+
+- Github team workflow learn
+     - do pull requests
+     - setup github actions with tests.
 
 - add a basic svelteJs frontEnd
    - components
