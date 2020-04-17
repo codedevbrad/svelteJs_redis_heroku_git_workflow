@@ -32,4 +32,4 @@ app.use('/api' , require('./dev_api/api') );
 // error middleware
 require('./dev_api/errors').errors( app );
 
-server.listen( PORT, () => console.log(`Listening on ${ PORT }`))
+server.listen( PORT, ( ) => console.log(`Listening on ${ PORT }`));

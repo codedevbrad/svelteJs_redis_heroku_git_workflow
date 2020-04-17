@@ -9,6 +9,11 @@
 
 # to do
 
+- unit testing with github and actions before pushing to heroku.
+
+   - add unit testing and github workflow with git actions used before
+     pushing updates
+
 - redis
    - accessing redis from other files. so exporting the redis variable?.
    - when setting data, how much data does this use on the server?.
@@ -22,10 +27,6 @@
     - learn components.
 
 - try to point domain to the heroku app.
-
-- Github team workflow learn
-     - do pull requests
-     - setup github actions with tests.
 
 - add a basic svelteJs frontEnd
    - components
