@@ -12,7 +12,8 @@
     "server-test":    "mocha dev/service_tests/",
     "client-install": "npm install --prefix client" ,
     "client-run":     "npm run dev --prefix client" ,
-    "app-dev-all":    "concurrently \"npm run server-watch\" \"npm run client-run\""
+    "app-dev-all":    "concurrently \"npm run server-watch\" \"npm run client-run\"" ,
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run start --prefix client"
   },
   "dependencies": {
     "concurrently": "^5.1.0",
