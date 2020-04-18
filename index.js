@@ -15,21 +15,23 @@ var config = require('./config/settings.js');
     config.development( app , __dirname );
     config.middleware(  app , __dirname );
 
-const testENV = process.env.TESTING || 'default test text';
-
 // connect to mongodb atlas.
 mongoose.connect( process.env.DATABASE_ATLAS , { useNewUrlParser: true } )
         .then ( ( ) => console.log('mongodb Connected'))
         .catch( err => console.log( err ));
 
-
-app.get('/', ( req, res , next ) => {
-    res.status( 200 ).send( `hello , ${ testENV } ` );
-});
-
-// api routes
 app.use('/api' , require('./dev_api/api') );
+
+// serve static assets if in production.
+if ( process.env.NODE_ENV === 'production') {
+    // set static folder
+    app.use(express.static('client/public'));
+    app.get('*' , ( req , res ) => {
+        res.sendFile( path.resolve(__dirname , 'client' , 'public' , 'index.html' ));
+    });
+}
 // error middleware
 require('./dev_api/errors').errors( app );
+
 
 server.listen( PORT, ( ) => console.log(`Listening on ${ PORT }`));

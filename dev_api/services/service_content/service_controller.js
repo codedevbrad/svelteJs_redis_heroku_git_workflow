@@ -5,6 +5,7 @@ const client    = require('../../../index.js').redisClient;
 const TestModel = require('./service_model').items;
 
 module.exports.GET_data = ( req , res , next ) => {
+   throw new Error('omg what happened');
    TestModel.find()
             .then( data => {
                 console.log('getting from db')

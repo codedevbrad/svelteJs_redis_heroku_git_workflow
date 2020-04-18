@@ -7,11 +7,16 @@
   },
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev":  "nodemon bin/dev",
-    "test": "mocha dev/service_tests/"
+    "server-dry":     "node index.js",
+    "server-watch":   "nodemon bin/dev",
+    "server-test":    "mocha dev/service_tests/",
+    "client-install": "npm install --prefix client" ,
+    "client-run":     "npm run dev --prefix client" ,
+    "app-dev-all":    "concurrently \"npm run server-watch\" \"npm run client-run\"" ,
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "dependencies": {
+    "concurrently": "^5.1.0",
     "cors": "^2.8.5",
     "express": "^4.15.2",
     "mongoose": "^5.9.5",
