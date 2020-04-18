@@ -11,8 +11,8 @@
     "server-watch":   "nodemon bin/dev",
     "server-test":    "mocha dev/service_tests/",
     "client-install": "npm install --prefix client" ,
-    "client-run":     "npm run dev --prefix client" ,
-    "app-dev-all":    "concurrently \"npm run server-watch\" \"npm run client-run\"" 
+    "client-run":     "npm run start --prefix client" ,
+    "start":          "concurrently \"npm run server-watch\" \"npm run client-run\""
   },
   "dependencies": {
     "concurrently": "^5.1.0",
