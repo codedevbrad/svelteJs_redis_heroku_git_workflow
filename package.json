@@ -12,7 +12,8 @@
     "server-test":    "mocha dev/service_tests/",
     "client-install": "npm install --prefix client" ,
     "client-run":     "npm run start --prefix client" ,
-    "start":          "concurrently \"npm run server-watch\" \"npm run client-run\""
+    "app-run-all":    "concurrently \"npm run server-watch\" \"npm run client-run\"" ,
+    "start":          "npm run server-dry"
   },
   "dependencies": {
     "concurrently": "^5.1.0",
