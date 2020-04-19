@@ -22,14 +22,20 @@ mongoose.connect( process.env.DATABASE_ATLAS , { useNewUrlParser: true } )
 
 app.use('/api' , require('./dev_api/api') );
 
+
 // serve static assets if in production.
-if ( process.env.NODE_ENV === 'production') {
+if ( process.env.NODE_ENV === 'development') {
     // set static folder
     app.use(express.static('client/public'));
     app.get('*' , ( req , res ) => {
         res.sendFile( path.resolve(__dirname , 'client' , 'public' , 'index.html' ));
     });
+} else {
+   app.get('/' , ( req , res , next ) => {
+       res.status(200).send('home route. go to /api/getData');
+   });
 }
+
 // error middleware
 require('./dev_api/errors').errors( app );
 
