@@ -9,6 +9,14 @@
 
 # to do
 
+we can run svelteJs from the command npm run build or npm run start. the problem is i need to run both node and then load sveltejs through the command.
+Now,
+ - how do i build the sveltejs app so that i can run it straight through clicking index.html - instead of needing to use a command to build the static app.
+ - its only the paths that need to be built.
+
+
+==============
+
 - unit testing with github and actions before pushing to heroku.
 
    - add unit testing and github workflow with git actions used before
